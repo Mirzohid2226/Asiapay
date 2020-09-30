@@ -1,0 +1,556 @@
+*
+{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	scroll-behavior: smooth;
+}
+body
+{
+	margin: 0 auto;
+	padding: 0;
+	font-family: sans-serif;
+}
+section
+{
+	padding: 150px 100px;
+}
+.toggle
+{	
+	position: fixed;
+	display: flex;
+	top: 0;
+	left: 0;
+	justify-content: space-between;
+	align-items: center;
+	width: 100%;
+	height: 10vh;
+	background: #000;
+}
+
+header
+{
+	position: fixed;
+	display: flex;
+	top: 0;
+	left: 0;
+	padding: 20px 100px;
+	width: 100%;
+	height: 10vh;
+	justify-content: space-between;
+	align-items: center;
+	z-index: 1000;
+	transition: .5s;
+}
+header.sticy
+{
+	background: #fff;
+	padding: 20px 100px;
+	box-shadow: 0 5px 20px rgba(0,0,0,.1);
+}
+header.sticy .logo
+{
+	color: #fff;
+}
+header.sticy ul li a
+{
+	color: #fff;
+}
+.menu
+{
+	display: flex;
+	list-style: none;
+	height: 100%;
+	width: 100%;
+	float: left;	
+	justify-content: space-around;
+	align-items: center;
+	margin-left: auto;
+}
+.m-l5
+{
+	margin-left:180px;
+}
+.left-link
+{
+	margin-right: auto;
+}
+.menu li a
+{
+	color: #fff;
+	text-decoration: none;
+	font-size: 16px;
+	font-weight: 600;
+}
+.menu li .transparend
+{
+	padding: 7px 10px;
+	background: springgreen;
+}
+.menu li .border
+{
+	padding: 5px 10px;
+	border:2px solid black;
+	background: #19b9b1;
+}
+.logo
+{
+	font-family: cursive;
+	margin:10px 15px;
+	font-size: 35px;
+	align-items: stretch;
+	font-weight: 900;
+	text-decoration: none;
+	color: #fff;
+	text-shadow: 0 0 20px #58FFEC;
+	opacity: 1;
+}
+.logo:after
+{
+	content: attr(data-text);
+	position: absolute;
+	top: -8px;
+	left: -5px;
+	padding: 0 20px;
+	z-index: -1;
+	color: #58FFEC;
+	filter: blur(25px);
+}
+.logo:before
+{
+	content: '';
+	position: absolute;
+	top: 5px;
+	left: 0;
+	background: #58FFEC;
+	z-index: -2;
+	opacity: .5;
+	filter: blur(50px);
+}
+
+.btn
+{
+	position: relative;
+	background:#45f3ff;
+	display: inline-block;
+	color: #000;
+	margin-top: 20px;
+	padding: 10px 30px;
+	font-size: 18px;
+	text-transform: uppercase;
+	text-decoration: none;
+	letter-spacing: 2px;
+	font-weight: 600;
+}
+.heading
+{
+	width: 100%;
+	text-align: center;
+	margin-bottom: 30px;
+	color: #111;
+}
+.heading h2
+{
+	font-weight: 600;
+	font-size: 30px;
+}
+.heading.white
+{
+	color: #fff;
+}
+.content
+{
+	display: flex;
+	justify-content: space-between;
+}
+.contentBx 
+{
+	padding-right: 30px;
+}
+.contentBx h3
+{
+	font-size: 24px;
+	margin-bottom: 10px;
+}
+
+.services
+{
+	background: #000;
+}
+.forms
+{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
+	background: #000;
+}
+
+/*Form*/
+.container
+{
+	width: 100%;
+	padding: 20px;
+	margin: 20px 0;
+}
+.container h2
+{
+	width: 100%;
+	color: #45f3ff;
+	font-size: 36px;
+	text-align: center;
+	margin-bottom: 10px;
+}
+.container p
+{
+	color: #fff;
+	text-align: center;
+	margin: 20px 0;
+}
+.container .row100
+{
+	position: relative;
+	width: 100%;
+	display: grid;
+	grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
+}
+.container .row100 .col
+{
+	position: relative;
+	width: 100%;
+	padding: 0 10px;
+	margin: 30px 0 10px;
+	transition: 0.5s;
+}
+.container .row100 .inputBox
+{
+	position: relative;
+	width: 100%;
+	height: 40px;
+	color:  #45f3ff;
+}
+.container .row100 .inputBox input,
+.container .row100 .inputBox.textarea textarea
+{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	border: none;
+	background: transparent;
+	box-shadow: none;
+	outline: none;
+	font-size: 18px;
+	padding: 0 10px;
+	z-index: 1;
+	color: #000;
+}
+.container .row100 .inputBox .text
+{
+	position: absolute;
+	top: 0;
+	left: 0;
+	line-height: 40px;
+	font-size: 18px;
+	padding: 0 10px;
+	display: block;
+	transition: 0.5s;
+	pointer-events: none;
+}
+.container .row100 .inputBox input:focus + .text,
+.container .row100 .inputBox input:valid + .text
+{
+	top: -35px;
+	left: -10px;
+}
+.container .row100 .inputBox .line
+{
+	position: absolute;
+	bottom: 0;
+	display: block;
+	width: 100%;
+	height: 2px;
+	background: #45f3ff;
+	transition: 0.5s;
+	border-radius: 2px;
+	pointer-events: none;
+}
+.container .row100 .inputBox input:focus ~ .line,
+.container .row100 .inputBox input:valid ~ .line
+{
+	height: 100%;
+}
+.row100 a
+{
+	border: none;
+	padding: 10px 35px;
+	cursor: pointer;
+	outline: none;
+	background: #45f3ff;
+	color: #000;
+	font-size: 18px;
+	border-radius: 2px;
+	text-decoration: none;
+
+}
+select
+{
+	width: 100%;
+	height: 100%;
+	border-radius: 2px;
+	background: #45f3ff;
+}
+
+/*history*/
+
+.history
+{
+	background: #000;
+}
+.box1
+{
+	position: relative;
+	width: 80%;
+	height: 100vh;
+	left: 50%;
+	transform: translate(-50%, 0);
+	justify-content: center;
+	align-items: center;
+	background: #45f3ff;
+	overflow: auto;
+
+}
+.box1 .page
+{
+	position: relative;
+	top: 0;
+	left: 0;
+	width: 100%;
+	min-height: 10vh;
+}
+.box1 .page select
+{
+	position: fixed;
+	display: flex;
+	width: 100%;
+	height: 10vh;
+	font-size: 24px;
+	font-weight: 600;
+	background: #45f3ff;
+}
+
+.infobox
+{
+	width: 100%;
+	height: 100vh;
+}
+.infobox a
+{
+	display: block;
+	position: relative;
+	justify-content: center;
+	align-items: center;
+	padding: 30px 50px;
+	margin: 3px 0;
+	border: 2px 0 solid #3E81AD;
+	background: #45f3ff;
+	text-decoration: none;
+	font-size: 18px;
+	font-weight: 600;
+	letter-spacing: normal;
+	color: #000;
+}
+.infobox a .head
+{	
+	display: inline-block;
+}
+.infobox a .list
+{
+	display: grid;
+	padding: 5px 10px;
+	margin: auto;
+
+}
+
+::-webkit-scrollbar
+{
+	width: 5px;
+	background: #000;
+}
+::-webkit-scrollbar-thumb
+{
+	background: linear-gradient(transparent,aqua);
+	border-radius: 5px;
+}
+
+/*Responsiv*/
+@media screen and (max-width: 968px) {
+	.line
+	{
+		width: 30px;
+		height: 3px;
+		background: #fff;
+		margin: 5px;
+		transition: 0.75s;
+	}
+	header,
+	header.sticy
+	{
+		padding: 20px 50px;
+		z-index: 1000;
+	}
+	.toggle.active .line
+	{
+		background: #000;
+	}
+	section
+	{
+		padding: 100px 50px;
+	}
+	nav
+	{
+		position: fixed;
+	}
+	.toggle.active .line:nth-child(1)
+	{
+		transform: rotate(45deg) translate(5px, 5px);
+	}
+	.toggle.active .line:nth-child(2)
+	{
+		display: none;
+	}
+	.toggle.active .line:nth-child(3)
+	{
+		transform: rotate(-45deg) translate(1px, -1px);
+	}
+	.lineBx
+	{
+		position: absolute;
+		cursor: pointer;
+		right: 5%;
+		top: 50%;
+		transform: translate(-5%, -50%);
+		z-index: 2;
+	}
+	.menu
+	{
+
+		position: fixed;
+		background: white;
+		height: 100vh;
+		width: 100%;
+		flex-direction: column;
+		clip-path: circle(100px at 90% -30%);
+		-webkit-clip-path:circle(100px at 90% -10%);
+		transition: all 1.3s ease-out;
+		pointer-events: none;
+		top: -100%;
+	}
+	.menu.active
+	{
+
+		clip-path: circle(1000px at 90% -30%);
+		-webkit-clip-path:circle(1000px at 90% -10%);
+		pointer-events: all;
+		top: 0;
+	}
+	.landing
+	{
+		flex-direction: column;
+	}
+	.menu li
+	{
+		opacity: 0;
+	}
+	.menu .m-l5
+	{
+		margin-left: 0;
+	}
+	.menu.active li a
+	{
+
+		color: #000;
+		font-size: 28px;
+		font-weight: 800;
+	}
+	.menu.active li:nth-child(1)
+	{
+		transition: all 0.5s ease 0.3s;
+	}
+	.menu.active li:nth-child(2)
+	{
+		transition: all 0.5s ease 0.4s;
+	}
+	.menu.active li:nth-child(3)
+	{
+		transition: all 0.5s ease 0.6s;
+	}
+	.menu.active li:nth-child(4)
+	{
+		transition: all 0.5s ease 0.8s;
+	}
+	.menu.active li:nth-child(5)
+	{
+		transition: all 0.5s ease 1s;
+	}
+	.menu.active li:nth-child(6)
+	{
+		transition: all 0.5s ease 1s;
+	}
+	.menu.active li
+	{
+		opacity: 1;
+	}
+	.menu.active li .transparend
+	{
+		padding: 10px 25px;
+		border:2px solid black;
+		background: springgreen;
+	}
+	.menu.active li .blue
+	{
+		padding: 10px 30px;
+		border:2px solid black;
+		background: #19b9b1;
+	}
+	.btn
+	{
+		margin-top: 10px;
+		padding: 10px 20px;
+		font-size: 16px;
+	}
+	.heading h2
+	{
+		font-size: 24px;
+	}
+	.contentBx h3
+	{
+    font-size: 20px;
+	}
+	.content
+	{
+		flex-direction: column;
+	}
+	.services .content .servicesBx
+	{
+		margin: 10px;
+	}
+	.infobox a
+	{
+		padding: 30px 30px;
+	}
+	.infobox a .head
+	{	
+		width: 100%;
+		border: 1px solid white;
+		margin: 5px 0;
+
+	}
+	.container .row100
+	{
+		grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+	}
+	select
+	{
+		width: 90%;
+	}
+}
